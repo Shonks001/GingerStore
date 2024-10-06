@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Commande</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GingerStore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="panier.html">Panier</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container"> <!-- Conteneur pour le formulaire -->
+            <h2>Informations de Commande</h2>
+            <form id="formulaire-commande">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adresse">Adresse de livraison :</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="paiement">Méthode de paiement :</label>
+                    <select id="paiement" name="paiement" required>
+                        <option value="carte">Carte de crédit</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="bouton-valider">Valider la commande</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Shonks</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

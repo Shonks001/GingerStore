@@ -1,0 +1,356 @@
+/* Style général */
+body {
+    font-family: Playfair, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #f5f5f5;
+    color: rgb(48, 48, 48);
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Playfair';
+}
+#slogan {
+    font-family: 'Dancing Script', cursive; /* Appliquer la police */
+    font-size: 1.5em; /* Ajuste la taille selon tes préférences */
+    font-style: italic; /* Mettre en italique */
+    font-weight: 300;
+    color: gray;
+    margin-top: 5px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #000000;
+    height: 50px;
+    align-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.produit {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    margin-bottom: 30px;
+    border: 0px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.produit img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    height: auto;
+    margin: 0 auto;
+}
+
+.produit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+.produit:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+    transition: background-color 1.3s ease;
+    color: white;
+    transition: color 1.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.produit button {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(245, 245, 245);
+    color: rgb(48, 48, 48);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+@keyframes ajouterPanierAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.confirmation-ajout {
+    display: none;
+    color: green;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.produit-ajoute {
+    display: inline-block;
+    opacity: 1;
+}
+
+.produit-ajoute.fade-out {
+    opacity: 0;
+}
+
+.produit button:hover {
+    background-color: #444;
+}
+
+.produit button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.icone-panier {
+    position: relative;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.nombre-articles-panier {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 12px;
+}
+.panier {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Ombre douce pour un effet visuel moderne */
+    border-radius: 8px;  /* Coins arrondis pour un style doux */
+}
+
+.panier h2 {
+    font-family: 'Playfair Display', serif;  /* Police élégante */
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.produit-panier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #000000;  /* Ligne légère de séparation */
+}
+
+.produit-panier img {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;  /* Légèrement arrondi */
+}
+
+.produit-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.produit-nom {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.produit-prix {
+    font-size: 16px;
+    color: #666;
+}
+
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.supprimer {
+    background-color: transparent;
+    color: #ff4c4c;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.total-panier {
+    text-align: right;
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Bouton de validation */
+.bouton-valider {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-valider:hover {
+    background-color: #333;
+}
+
+.confirmation {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.confirmation h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.confirmation p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.confirmation .icon-success {
+    font-size: 48px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+/* Résumé de la commande */
+.resume-commande {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.resume-commande .ligne {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.resume-commande .ligne span {
+    font-weight: bold;
+}
+
+/* Bouton retour à la boutique */
+.bouton-retour {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #000;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-retour:hover {
+    background-color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%; /* Largeur pleine */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut les bordures dans le calcul de largeur */
+}
+
+/* Style des labels */
+.form-group label {
+    display: block; /* Affichage en bloc */
+    font-size: 16px; /* Taille du texte */
+    margin-bottom: 5px; /* Marge inférieure */
+}
+.form-group {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+.form-container h2 {
+    font-family: 'Playfair Display', serif; /* Police élégante */
+    text-align: center; /* Centre le texte */
+    font-size: 32px; /* Taille du texte */
+    margin-bottom: 30px; /* Marge inférieure */
+    color: #333; /* Couleur du texte */
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GingerStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>GingerStore</h1>
+        <p id="slogan">Fournisseur officiel de l'empereur</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="panier.html" class="icone-panier">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="nombre-articles-panier">0</span> <!-- Pour afficher le nombre d'articles -->
+                </a></li>
+                <li><a href="formulaire.html">Valider la commande</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="produits-en-vedette">
+            <h2></h2>
+            <div class="produits">
+                <!-- Exemples de produits -->
+                <div class="produit">
+                    <img src="https://imgs.search.brave.com/L2j7FnIouGUjidbRSa0KWEN-cIMguqPzYtiNRMSolK4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGEtcG9pdnJpZXJl/LmZyL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIwLzA4L2dpbmdl/bWJyZTEtc2NhbGVk/LW1pbi5qcGc" alt="Gingembre en Poudre">
+                    <h3>Gingembre en Poudre (75g)</h3>
+                    <p>Le gingembre en poudre est une épice obtenue à partir des racines séchées et moulues de la plante de gingembre (truc de goooatttt).</p>
+                    <p>Prix : 19.99 Ss</p>
+                    <button onclick="ajouterAuPanier('Gingembre en Poudre', 19.99)">Ajouter au panier</button>
+                </div>
+                <div class="produit">
+                    <img src="https://imgs.search.brave.com/w7M2OpuBVPhkIlfZvu4tPbSs-q883VxGKE82U7kkBPM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kZWNv/cnNldGFtZXMuY29t/L2Nkbi9zaG9wL2Zp/bGVzLzBDMEQxMTVF/LTIzOUUtNDAyNS04/REVBLTAyRTBBNUYw/OTQ1Ny5qcGc_dj0x/NzI2NTE3ODU5Jndp/ZHRoPTE5NDY" alt="Gingembre Confit">
+                    <h3>Gingembre Confit</h3>
+                    <p>Profiter de la puissance du gingembre de maniere compacte et simplifiée. Le Gingembre Confit allie élegance et pureté dans le creux de votre main (Pas pour les tuberculeux ça)</p>
+                    <p>Prix : 29.99 Ss</p>
+                    <button onclick="ajouterAuPanier('Gingembre Confit', 29.99)">Ajouter au panier</button>
+                </div>
+                <!-- Ajoute plus de produits ici -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Shonks &#x1F5FF</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
