@@ -349,3 +349,15 @@ button.supprimer {
     margin-bottom: 30px; /* Marge inférieure */
     color: #333; /* Couleur du texte */
 }
+
+button {
+    background-color: #000; /* Couleur de fond noir */
+    color: #fff; /* Couleur du texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 12px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 16px; /* Taille de la police */
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation douce */
+}    
