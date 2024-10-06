@@ -1,16 +1,15 @@
-// Initialiser le panier vide ou charger les données du localStorage s'il y en a déjà
+
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
 
-// Fonction pour ajouter un produit au panier
 function ajouterAuPanier(nomProduit, prixProduit) {
-    // Chercher si le produit existe déjà dans le panier
+
     const produitExiste = panier.find(produit => produit.nom === nomProduit);
 
     if (produitExiste) {
-        // Si le produit existe, on augmente la quantité
+
         produitExiste.quantite += 1;
     } else {
-        // Sinon, on ajoute un nouveau produit avec une quantité initiale de 1
+
         const produit = {
             nom: nomProduit,
             prix: prixProduit,
@@ -19,10 +18,10 @@ function ajouterAuPanier(nomProduit, prixProduit) {
         panier.push(produit);
     }
 
-    // Sauvegarder le panier dans le localStorage
+
     localStorage.setItem('panier', JSON.stringify(panier));
 
-    // Confirmation de l'ajout
+
     alert(`${nomProduit} a été ajouté au panier !`);
 
     mettreAJourCompteurPanier();
@@ -31,27 +30,27 @@ function ajouterAuPanier(nomProduit, prixProduit) {
     confirmationMessage.classList.add('confirmation-ajout', 'produit-ajoute');
     confirmationMessage.innerText = `${nomProduit} ajouté au panier !`;
 
-    const header = document.querySelector('header'); // Par exemple, l'endroit où tu veux afficher le message
+    const header = document.querySelector('header');
     header.appendChild(confirmationMessage);
 
     setTimeout(() => {
         confirmationMessage.classList.add('fade-out');
-    }, 1000); // Attends 1 seconde avant de commencer le fondu
+    }, 1000);
 
-    // Supprimer le message après l'effet de fondu
+   
     setTimeout(() => {
         header.removeChild(confirmationMessage);
-    }, 2000); // 1 seconde de plus pour le temps de l'animation (1s + 1s de fondu)
+    }, 2000); 
 }
 
-// Fonction pour afficher le panier
+
 function afficherPanier() {
     const panierDiv = document.getElementById('contenu-panier');
-    panierDiv.innerHTML = ''; // Vider le contenu actuel avant de réafficher
+    panierDiv.innerHTML = ''; 
 
-    let total = 0;  // Initialiser le total du panier
+    let total = 0;  
 
-    // Parcourir chaque produit dans le panier et l'afficher
+    
     panier.forEach((produit, index) => {
         const produitDiv = document.createElement('div');
         produitDiv.classList.add('produit-panier');
@@ -101,7 +100,7 @@ window.onload = function() {
     mettreAJourCompteurPanier();
 };
 function mettreAJourCompteurPanier() {
-    const nombreArticles = panier.reduce((total, produit) => total + produit.quantite, 0); // Calcul du total d'articles
+    const nombreArticles = panier.reduce((total, produit) => total + produit.quantite, 0);
     document.querySelector('.nombre-articles-panier').innerText = nombreArticles;
 }
 
