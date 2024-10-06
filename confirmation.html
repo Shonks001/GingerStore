@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Commande</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Confirmation de votre commande</h1>
+    <div id="contenu-commande">
+        <!-- Les détails de la commande seront affichés ici par le JavaScript -->
+    </div>
+    <button onclick="window.location.href='formulaire.html'">Valider la commande</button>
+
+    <script src="script.js"></script>
+    <script>
+        // Fonction pour afficher le récapitulatif de la commande
+        function afficherRécapitulatif() {
+            const commandeDiv = document.getElementById('contenu-commande');
+            commandeDiv.innerHTML = ''; // Vider le contenu actuel avant d'afficher
+
+            let total = 0;  // Initialiser le total
+
+            // Parcourir chaque produit dans le panier pour afficher les détails
+            panier.forEach(produit => {
+                const produitDiv = document.createElement('div');
+                produitDiv.innerHTML = `${produit.nom} - ${produit.prix.toFixed(2)} Ss x ${produit.quantite}`;
+                commandeDiv.appendChild(produitDiv);
+
+                // Calculer le total
+                total += produit.prix * produit.quantite;
+            });
+
+            // Afficher le total
+            commandeDiv.innerHTML += `<strong>Total : ${total.toFixed(2)} Ss</strong>`;
+        }
+
+        // Finaliser la commande
+        document.getElementById('finaliser-commande').addEventListener('click', function() {
+            alert("Merci pour votre commande !");
+            localStorage.removeItem('panier'); // Vider le panier après commande
+            window.location.href = 'index.html'; // Rediriger vers la page d'accueil
+        });
+
+        // Charger et afficher le récapitulatif à l'ouverture de la page
+        window.onload = function() {
+            afficherRécapitulatif();
+        };
+    </script>
+</body>
+</html>
