@@ -1,3 +1,4 @@
+/* Style général */
 body {
     font-family: Playfair, serif;
     margin: 0;
@@ -13,9 +14,9 @@ header {
     font-family: 'Playfair';
 }
 #slogan {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.5em;
-    font-style: italic;
+    font-family: 'Dancing Script', cursive; /* Appliquer la police */
+    font-size: 1.5em; /* Ajuste la taille selon tes préférences */
+    font-style: italic; /* Mettre en italique */
     font-weight: 300;
     color: gray;
     margin-top: 5px;
@@ -176,12 +177,12 @@ footer {
     margin: 0 auto;
     background-color: white;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Ombre douce pour un effet visuel moderne */
+    border-radius: 8px;  /* Coins arrondis pour un style doux */
 }
 
 .panier h2 {
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Playfair Display', serif;  /* Police élégante */
     text-align: center;
     font-size: 32px;
     margin-bottom: 30px;
@@ -194,13 +195,14 @@ footer {
     align-items: center;
     margin-bottom: 20px;
     padding: 10px 0;
-    border-bottom: 1px solid #000000; 
+    border-bottom: 1px solid #000000;  /* Ligne légère de séparation */
 }
 
 .produit-panier img {
     width: 80px;
     height: auto;
-    border-radius: 4px; 
+    border-radius: 4px;  /* Légèrement arrondi */
+}
 
 .produit-details {
     flex-grow: 1;
@@ -243,7 +245,7 @@ button.supprimer {
     margin-top: 20px;
 }
 
-
+/* Bouton de validation */
 .bouton-valider {
     display: block;
     width: 100%;
@@ -292,6 +294,7 @@ button.supprimer {
     margin-bottom: 20px;
 }
 
+/* Résumé de la commande */
 .resume-commande {
     font-size: 16px;
     color: #333;
@@ -309,6 +312,7 @@ button.supprimer {
     font-weight: bold;
 }
 
+/* Bouton retour à la boutique */
 .bouton-retour {
     display: inline-block;
     padding: 10px 30px;
@@ -326,38 +330,27 @@ button.supprimer {
 
 .form-group input,
 .form-group select {
-    width: 100%; 
-    padding: 10px; 
-    border: 1px solid #ccc;
-    border-radius: 4px; 
-    box-sizing: border-box; 
+    width: 100%; /* Largeur pleine */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut les bordures dans le calcul de largeur */
 }
 
+/* Style des labels */
 .form-group label {
-    display: block; 
-    font-size: 16px; 
-    margin-bottom: 5px; 
+    display: block; /* Affichage en bloc */
+    font-size: 16px; /* Taille du texte */
+    margin-bottom: 5px; /* Marge inférieure */
 }
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Marge inférieure */
 }
 
 .form-container h2 {
-    font-family: 'Playfair Display', serif; 
-    text-align: center;
-    font-size: 32px;
+    font-family: 'Playfair Display', serif; /* Police élégante */
+    text-align: center; /* Centre le texte */
+    font-size: 32px; /* Taille du texte */
     margin-bottom: 30px; /* Marge inférieure */
     color: #333; /* Couleur du texte */
 }
-
-button {
-    background-color: #000; /* Couleur de fond noir */
-    color: #fff; /* Couleur du texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 12px 20px; /* Espacement intérieur */
-    cursor: pointer; /* Curseur en forme de main */
-    font-size: 16px; /* Taille de la police */
-    text-transform: uppercase; /* Mettre le texte en majuscules */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation douce */
-}    
